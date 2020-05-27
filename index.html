@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link id="pagestyle" rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Proyecto Giff </title>
+</head>
+<body id="body">
+
+        <!-- TODO LO QUE ES ENCABEZADO Y MENU DE NAVEGACION -->
+    <header>
+     <div class="encabezado">
+        <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</p>
+    </div>
+
+    <nav>
+        <div class="menu">
+            <div class="contenedor-logo">
+                <img src="img/gifOF_logo.png" alt="logo" class="logo" id="logo">
+            </div>
+               
+            <div class="contenedor-botones">
+                <div class="primer-boton" id="btn-creargif">
+                        <a href="captura.html"  class="dashed-menu"> Crear Guifos</a>
+                </div>
+
+                    
+                <div class="segundo-boton">
+                 <button class="dashed-segundoboton" onclick="seleccionartheme()">
+                    Elegir tema
+                 </button>
+                </div>
+
+                <div id="temas" class="temas"> 
+                    <button class="theme" id="day" onclick='cambiarsheet("css/estilos.css"); changeday()'><span class="sailor">S</span>ailor Day</button>
+                    <button class="theme" id="dark" onclick='cambiarsheet("css/dark.css"); changedark()'>Sailor Night</button>
+                </div>
+
+
+            
+                <button class="boton-flecha"  onclick="seleccionartheme()">
+                    <img src="img/dropdown.svg" alt="flecha" class="flecha-negra"> 
+                    <img src="img/dropdownwhite.svg" alt="flecha" class="flecha-blanca"> 
+                </button>
+
+                          
+                 <a href="captura.html" class="boton-mis"> <span class="sub">M</span>is Guifos</a>
+                
+            </div>  
+        </div>
+     </nav>
+    </header>
+        <!-- TODO LO QUE ES ENCABEZADO Y MENU DE NAVEGACION -->
+
+
+
+
+        <!-- SECCION BUSCADOR -->
+<div class="buscar">
+        <div class="barra-buscar">
+            <p>Buscar</p>
+        </div>  
+
+        <div class="fondo-gris">
+            <form id="from" onSubmit="return false;">
+                <input id="search" class="input" type="search" onkeypress="handle(event)" size="800"  placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+            </form>
+            <div class="dashed" id="dashed"> 
+                 <button class="boton-buscar" id="btn-buscar" disabled="disabled" onclick="conectarGiff(); buscarresultado(); " >      
+                    <img src="img/lupa_inactive.svg" id="lupa" alt="lupa" class="lupa">
+                    Buscar  
+                </button>
+            </div>
+        </div>
+
+        <div id="inputSug">
+        <ul id="buscador-despegable" class="contenedor-sugerencias">
+            <li id="busqueda1" class="sugerenciasinput" onclick="SugerenciaUno()">Cat</li>    
+            <li id="busqueda2" class="sugerenciasinput" onclick="SugerenciaDos()">Anime</li>
+            <li id="busqueda3" class="sugerenciasinput" onclick="SugerenciaTres()" >Sport</li>
+        </ul>
+        </div>
+    </div>
+        <!-- SECCION BUSCADOR -->
+
+
+
+    
+
+     <!-- Botonoes de ultimas busquedas -->
+    <ul class="resultadocreados">
+    </ul>
+    <!-- Botonoes de ultimas busquedas -->
+
+ 
+
+
+
+    <!-- Botonoes de ultimas busquedas -->
+    <div id="barra-Busqueda" class="div-sindiseño">
+        <p id="Busqueda" class="textotendencias">Te sugerimos</p>
+    </div>
+    <!-- Botonoes de ultimas busquedas -->
+
+
+
+
+
+
+
+
+
+  <!-- Div Galeria de te sugerimos -->
+<div class="galeria-sugerimos">
+        <!-- Primera sugerencia -->
+        <div class="fondo-sugerimos">
+            <div class="parrafo-imagen">
+                <p class="text-tendencias"># RIOT Games</p>
+                <img src="img/close.svg" alt="cruz" class="cruz-sg1">
+            </div>
+
+            <div class="titulo-imagen" id="tituloimg">
+                <button class="boton-mas" id="btnbuscar" onclick="buscarRiot(), DesplegarRiot();">
+                    Ver mas...
+                </button>
+            </div>
+        </div>
+
+
+
+
+        <!-- Segunda sugerencia -->
+        <div class="fondo-sugerimos">
+            <div class="parrafo-imagen">
+              <p class="text-tendencias"># Digimon</p>
+              <img src="img/close.svg" alt="cruz" class="cruz-sg2">
+            </div>
+            
+            <div class="titulo-imagen" id="tituloimgDigi">
+                <button class="boton-mas" id="btn-sailor" onclick="buscarDigimon(), Desplegardigimon();">
+                    Ver mas...
+                </button>
+             </div>
+        </div>
+
+
+
+        
+
+        <!-- tercera sugerencia -->
+        <div class="fondo-sugerimos">
+            <div class="parrafo-imagen">
+                <p class="text-tendencias"># Pokemon</p>
+                <img src="img/close.svg" alt="cruz" class="cruz-sg3">
+            </div>
+
+            <div class="titulo-imagen" id="tituloimgPoke">
+                <button class="boton-mas" id="btn-pokemon" onclick="buscarPokemon(), DesplegarPokemon();">
+                    Ver mas...
+                </button>
+             </div >
+        </div>
+
+
+
+
+        <!-- Cuarta sugerencia -->
+        <div class="fondo-sugerimos">
+            <div class="parrafo-imagen">
+                <p class="text-tendencias"># Overwacht</p>
+                <img src="img/close.svg" alt="cruz" class="cruz-sg4">
+            </div>
+
+            <div class="titulo-imagen"  id="tituloimgOver">        
+                <button class="boton-mas" id="btn-unicorn" onclick="buscaroverwatch(), DesplegarOverwath();">
+                    Ver mas...
+                </button>
+           </div >
+        </div>
+
+    </div>
+  <!-- DIV Galeria de te sugerimos -->
+
+
+
+
+
+
+
+  <!-- DIV TENDENCIAS -->
+    <div class="tendencias">
+        <div id="barra-tendencias" class="div-sindiseño">
+            <p id="textoBusqueda" class="textotendencias">Tendencias</p>
+        </div>
+
+
+        <div id="primera-fila" class="zoom"></div> <!-- las imagenes las creo dinamicamente desde javascript -->
+    </div>
+<!-- div TENDENCIAS -->
+
+
+
+
+<script src="./script/scriptgeneral.js"></script>    
+</body>
+</html>
